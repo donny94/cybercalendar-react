@@ -181,29 +181,29 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
     }
 
     componentDidMount() {
-        const customRenderingStore = new CustomRenderingStore<unknown>()
-        this.handleCustomRendering = customRenderingStore.handle.bind(customRenderingStore)
+		console.log('donnebuoi');
+		const customRenderingStore = new CustomRenderingStore<unknown>()
+		this.handleCustomRendering = customRenderingStore.handle.bind(customRenderingStore)
 
-        this.calendar = new Calendar(this.elRef.current, {
-            ...this.props,
-            handleCustomRendering: this.handleCustomRendering,
-            customButtons: {
-                prev: {
-                    click: () => {
-                        this.calendar.prev();
-                        this.animateCalendar.animate(this.elRef.current as HTMLElement, 'prev');
-                    },
-                },
-                next: {
-                    click: () => {
-						console.log('alo')
-                        this.calendar.next();
-                        this.animateCalendar.animate(this.elRef.current as HTMLElement, 'next');
-                    },
-                },
-            },
-        })
-        this.calendar.render()
+		this.calendar = new Calendar(this.elRef.current, {
+			...this.props,
+			handleCustomRendering: this.handleCustomRendering,
+			customButtons: {
+				prev: {
+					click: () => {
+						console.log('Prev button clicked');
+						this.calendar.prev();
+					},
+				},
+				next: {
+					click: () => {
+						console.log('Next button clicked');
+						this.calendar.next();
+					},
+				},
+			},
+		})
+		this.calendar.render()
 
         let lastRequestTimestamp: number | undefined
 
