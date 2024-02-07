@@ -181,17 +181,13 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
     }
 
     componentDidMount() {
-		console.log('Coooooo')
+		console.log('B1')
         const customRenderingStore = new CustomRenderingStore<unknown>()
         this.handleCustomRendering = customRenderingStore.handle.bind(customRenderingStore)
 
         this.calendar = new Calendar(this.elRef.current, {
             ...this.props,
             handleCustomRendering: this.handleCustomRendering,
-			headerToolbar: {
-				start: 'title date',
-				end: 'customPrev,customNext today',
-			},
             customButtons: {
                 customPrev: {
 					text: 'prev',
@@ -245,6 +241,7 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
     }
 
     componentDidUpdate() {
+		console.log('B2')
         this.isUpdating = true
         this.calendar.resetOptions({
             ...this.props,
