@@ -189,6 +189,7 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
             handleCustomRendering: this.handleCustomRendering,
             customButtons: {
                 customPrev: {
+					text: 'prev',
                     click: () => {
 						console.log('Prev button clicked');
                         this.calendar.prev();
@@ -196,6 +197,7 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
                     },
                 },
                 customNext: {
+					text: 'next',
                     click: () => {
 						console.log('Next button clicked');
                         this.calendar.next();
