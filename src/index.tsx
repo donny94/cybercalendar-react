@@ -180,7 +180,7 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
     }
 
     componentDidMount() {
-		console.log('Component Mounted')
+		console.log('Coooooo')
         const customRenderingStore = new CustomRenderingStore<unknown>()
         this.handleCustomRendering = customRenderingStore.handle.bind(customRenderingStore)
 
@@ -188,14 +188,14 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
             ...this.props,
             handleCustomRendering: this.handleCustomRendering,
             customButtons: {
-                prev: {
+                customPrev: {
                     click: () => {
 						console.log('Prev button clicked');
                         this.calendar.prev();
                         this.animateCalendar.animate(this.elRef.current as HTMLElement, 'prev');
                     },
                 },
-                next: {
+                customNext: {
                     click: () => {
 						console.log('Next button clicked');
                         this.calendar.next();
