@@ -164,6 +164,7 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
         for (const customRendering of this.state.customRenderingMap.values()) {
             customRenderingNodes.push(
                 <CustomRenderingComponent
+				
                     key={customRendering.id}
                     customRendering={customRendering}
                 />
@@ -187,6 +188,10 @@ export default class FullCalendar extends Component<CalendarOptions, CalendarSta
         this.calendar = new Calendar(this.elRef.current, {
             ...this.props,
             handleCustomRendering: this.handleCustomRendering,
+			headerToolbar: {
+				start: 'title date',
+				end: 'customPrev,customNext today',
+			},
             customButtons: {
                 customPrev: {
 					text: 'prev',
