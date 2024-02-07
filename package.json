@@ -1,6 +1,6 @@
 {
 	"name": "cybercalendar-react",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"title": "Calendar Cyber React Component",
 	"description": "Customize Swipe React Component from FullCalendar",
 	"keywords": [
@@ -17,7 +17,7 @@
 	"license": "MIT",
 	"repository": {
 	  "type": "git",
-	  "url": "https://github.com/donny94/calendar-cyber.git"
+	  "url": "https://github.com/donny94/cybercalendar-react.git"
 	},
 	"peerDependencies": {
 	  "@fullcalendar/core": "~6.1.10",
